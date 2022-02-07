@@ -12,6 +12,7 @@ class Topic0 {
     public interface Node
     {
         List<Node> GetChildren();
+        String getValue();
     }
 
     public static class SyntaxNode implements Node {
@@ -22,6 +23,10 @@ class Topic0 {
         }
         public Syntax getSyntax(){
             return this.syntax;
+        }
+        @Override
+        public String getValue(){
+            return syntax.toString();
         }
         @Override
         public List<Topic0.Node> GetChildren() {
@@ -51,6 +56,11 @@ class Topic0 {
             nodes.add(rightNode);
             return nodes;
         }
+        @Override
+        public String getValue() {
+            // TODO Auto-generated method stub
+            return null;
+        }
     }
     
     public static class NumberExpression implements Node{
@@ -61,8 +71,10 @@ class Topic0 {
             this.text = text;
             this.value = value;
         }
-
-        
+        @Override
+        public String getValue() {
+            return this.text.toString();
+        }
 
         @Override
         public List<Topic0.Node> GetChildren() {
@@ -169,11 +181,15 @@ class Topic0 {
         MakeTree make = new MakeTree(split.sperate());
         List<BinaryExpression> BinaryTree = make.Sort();
         for (BinaryExpression binaryExpression : BinaryTree) {
-            
-            System.out.println(binaryExpression.leftNode);
-            System.out.println(binaryExpression.operator);
-            System.out.println(binaryExpression.rightNode);
+            if(binaryExpression.leftNode.getClass() != BinaryExpression.class){
+                System.out.println(binaryExpression.leftNode.getValue());
 
+            }
+            System.out.println(binaryExpression.operator.getValue());
+            if(binaryExpression.rightNode.getClass() != BinaryExpression.class){
+
+                System.out.println(binaryExpression.rightNode.getValue());
+            }
         }
     }
 
