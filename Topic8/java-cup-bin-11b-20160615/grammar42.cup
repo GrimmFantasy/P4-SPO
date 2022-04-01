@@ -1,0 +1,8 @@
+terminal IF, THEN, ELSE, E, OTHER;
+
+non terminal program, stmt;
+
+program::= stmt;
+stmt::= IF E THEN stmt ELSE stmt
+        | IF E THEN stmt
+        | OTHER;

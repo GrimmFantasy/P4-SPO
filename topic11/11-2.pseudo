@@ -1,0 +1,61 @@
+class assignNode implements Node{
+    private variable;
+    private expression;
+    public assignNode(variable, expression){
+        this.variable = variable;
+        this.expression = expression;
+    }
+    public getChildren(){
+        return this.expression & this.variable;
+    }
+}
+class whileNode implements Node{
+    private predicate;
+    private loopBody;
+    public whileNode(predicate, loopBody){
+        this.predicate = predicate;
+        this.loopBody = loopBody;
+    }
+    public getChildren(){
+        return this.loopBody & this.predicate;
+    }
+}
+class ifNode implements Node{
+    private predicate;
+    private alternative;
+    private alternative;
+    public ifNode(predicate, alternative, alternative){
+        this.predicate = predicate;
+        this.alternative = alternative;
+        this.alternative = alternative;
+    }
+    public getChildren(){
+        return this.predicate & this.alternative & this.alternative;
+    }
+}
+class plusNode implements Node{
+    private expression;
+    private expression;
+    public plusNode(expression, expression){
+        this.expression = expression;
+        this.expression = expression;
+    }
+    public getChildren(){
+        return this.expression & this.expression;
+    }
+}
+class blockNode implements Node{
+    private List<statement>;
+    public blockNode(List<statement>){
+        this.List<statement> = List<statement>;
+    }
+    public getChildren(){
+        return this.List<statement>;
+    }
+}
+
+foreach(Node n in Nodelist){
+    print(n.GetType)
+    print(>--n.GetChildren)
+}
+

@@ -1,0 +1,10 @@
+terminal IF, THEN, ELSE, E, OTHER, WHILE, REPEAT, UNTIL;
+
+non terminal program, stmt;
+
+program::= stmt;
+stmt::= IF E THEN stmt ELSE stmt
+        | IF E THEN stmt
+        | WHILE E stmt
+        | REPEAT stmt UNTIL E
+        | OTHER;
